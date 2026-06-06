@@ -19,6 +19,7 @@ public class CicloFor {
         contador = Integer.parseInt(consola.next());
         for(int i = 1;i<=10;i++){
             if(i==5){
+                // break;
                 continue;
             }
             System.out.println(contador + " x "+ i +" = " + (i*contador));
