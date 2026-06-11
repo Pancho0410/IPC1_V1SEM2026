@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 public class BuffeWriterExample {
     public static void main(String[] args) {
         File miArchivo = new File("datos.txt");
+        //miArchivo.createNewFile();
         boolean existe = miArchivo.exists();
         String miNombre = "Tobias Francisco";
         int edad = 15;

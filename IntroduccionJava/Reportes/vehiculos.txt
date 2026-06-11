@@ -1,0 +1,11 @@
+marca,modelo,anio,kilometraje,disponible,https://i.ytimg.com/vi/LTQ-nM7Az9E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCE3dfnmGajFO8MmQ6jLpzZv3poyA 
+Toyota,Corolla,2020,45000.5,True,https://us.as.com/autos/wp-content/uploads/2025/08/Ranking-de-marcas-de-autos-en-Mexico-2025-%C2%BFQuien-vende-mas-1024x576.jpg
+Ford,Mustang,2018,62300.0,False,https://blog.continentalmotores.com/hubfs/si-eres-joven-y-te-gustan-los-carros-altos-y-amplios-la-t-cross-puede-ser-tu-mejor-opcion-uno.jpg
+Honda,Civic,2021,28000.25,True,https://www.univision.com/_next/image?url=https%3A%2F%2Fst1.uvnimg.com%2Fd1%2Ff3%2F8e7325e64441883e4c135a61dddd%2Flos-mejores-carros-2022.jpg&w=1280&q=75
+Chevrolet,Onix,2019,51200.8,True,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3zepEg3kmFQCIZP9-BxQci0rAb2iC15oF7w&s
+Volkswagen,Golf,2017,89450.0,False,https://www.simivalleychryslerdodgejeepram.com/blogs/5737/wp-content/uploads/2024/10/2024-Dodge-Charger-EV-Promises-to-Eclipse-the-Gas-Burning-Hellcat2024-Dodge-Charger-EV-Promises-to-Eclipse-the-Gas-Burning-Hellcat-1-1024x510.jpg
+Nissan,Sentra,2022,15300.2,True,https://i.ytimg.com/vi/ynWns1ToXI8/maxresdefault.jpg
+Hyundai,Tucson,2020,42100.6,False,https://www.eluniversal.com.mx/resizer/v2/XSFDXWPLWFEE3IEWVHN2NP3K7U.jpg?auth=28a92b7a1d88ddd9929ec22c7a9ddab5912e7f869bd3723e2ed802c3825e2c5c&smart=true&height=666
+Kia,Sportage,2023,8500.0,True,https://www.corporacionbi.com/gt/bancoindustrial/wp-content/uploads/2025/11/XIX-Exposicio%CC%81n-de-Autos-Cla%CC%81sicos-El-Rock-de-los-Carros-copia.webp
+Mazda,CX-5,2021,31000.75,True,https://chevrolethonduras.com/bloghn/wp-content/uploads/2024/07/chevrolet-honduras_n.jpg
+BMW,Serie 3,2016,110500.3,False,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3zepEg3kmFQCIZP9-BxQci0rAb2iC15oF7w&s
