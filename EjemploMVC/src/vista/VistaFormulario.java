@@ -19,8 +19,10 @@ public class VistaFormulario extends JFrame{
     private JTextField nota;
     private JButton btnAgregar;
     private JButton btnCancelar;
+    private VistaTabla vt;
     
-    public VistaFormulario(){
+    public VistaFormulario(VistaTabla vt){
+        this.vt = vt;
         configuracionInicial();
         inicializarComponentes();
         eventos();
@@ -97,6 +99,8 @@ public class VistaFormulario extends JFrame{
                 String Nombre = nombre.getText();
                 int Edad = Integer.parseInt(edad.getText());
                 double Nota = Double.parseDouble(nota.getText());
+                vt.controladorE.AgregarEsutdiante(Nombre, Edad, Nota);
+                vt.llenarTabla();
                 JOptionPane.showMessageDialog(this, "Se REGISTRO correctamente el esutdiante", "REGISTRO EXITOSO", JOptionPane.INFORMATION_MESSAGE);
             }catch(Exception r){
                 JOptionPane.showMessageDialog(this, "Ocurrio un error al castear los datos", "ERROR DE CASTEO", JOptionPane.ERROR_MESSAGE);

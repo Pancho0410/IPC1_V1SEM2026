@@ -13,5 +13,14 @@ public class PerroHerencia extends Animal{
     public PerroHerencia(String nombre, int edad){
         super(nombre, edad);
     }
+    
+    public void Saludar(){
+        System.out.println(this.nombre + ": te saluda");
+    }
+    
+    @Override
+    public void sonido(){
+        System.out.println(this.nombre + " hace un sonido x");
+    }
 
 }

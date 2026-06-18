@@ -3,8 +3,8 @@ package principal;
 
 
 public class Animal {
-    private String nombre;
-    private int edad;
+    protected String nombre;
+    protected int edad;
     
     public Animal(String nombre, int edad){
         this.nombre = nombre;

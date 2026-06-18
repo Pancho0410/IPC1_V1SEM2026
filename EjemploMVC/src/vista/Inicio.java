@@ -1,6 +1,7 @@
 
 package vista;
 
+import Controlador.ControladorEstudiante;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -9,8 +10,10 @@ import javax.swing.*;
 
 public class Inicio extends JFrame{
     private JButton btn;
+    private ControladorEstudiante ce;
     
-    public Inicio(){    
+    public Inicio(ControladorEstudiante ce){    
+        this.ce = ce;
         configuracionInicial();
         inicializacionComponentes();
         eventos();
@@ -56,7 +59,7 @@ public class Inicio extends JFrame{
     
     private void cerrarVentana(){
         this.dispose();
-        VistaTabla tbl = new VistaTabla();
+        VistaTabla tbl = new VistaTabla(this.ce);
         tbl.setVisible(true);
     }
     
