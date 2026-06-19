@@ -3,16 +3,19 @@ package principal;
 
 import Controlador.ControladorEstudiante;
 import javax.swing.UIManager;
+//import vistaDAD.Inicio;
 import vista.Inicio;
-import vista.Prueba;
-import vista.VistaFormulario;
+
+
 
 public class Main {
 
-   
+   public static ControladorEstudiante controladorEstudiante;
+    
     public static void main(String[] args) {
         
-        ControladorEstudiante controladorEstudiante = new ControladorEstudiante(); 
+        ControladorEstudiante controladorEstudiante = new ControladorEstudiante(); // Controlador creado en el main
+        
         /*
         try{
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -20,13 +23,18 @@ public class Main {
             System.out.println("No se pudo cambiar el look and feel");
         }*/
         
-        /*Inicio ventana = new Inicio(controladorEstudiante);
-        ventana.setVisible(true);*/
-        Prueba p = new Prueba();
-        p.setVisible(true);
+        Inicio ventana = new Inicio(controladorEstudiante);
+        ventana.setVisible(true);
         
-        /*VistaFormulario fm = new VistaFormulario();
-        fm.setVisible(true);*/
+        
+        
+        
+        
+        //---------------CON DRAG AND DROP--------------
+        /*controladorEstudiante = new ControladorEstudiante();
+        
+        Inicio ventana = new Inicio();
+        ventana.setVisible(true);*/
     }
     
 }

@@ -4,6 +4,8 @@ package vista;
 import Controlador.ControladorEstudiante;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -50,6 +52,7 @@ public class VistaTabla extends JFrame{
         modelo.addColumn("Edad");
         modelo.addColumn("Nota final");
         modelo.addColumn("Accion");
+        modelo.addColumn("Accion");
         //modelo.addRow(new Object[]{"1","Tobias",23,59,"Editar"});
         
         tabla = new JTable(modelo);
@@ -64,11 +67,17 @@ public class VistaTabla extends JFrame{
         
         DefaultTableCellRenderer columnaEditar = new DefaultTableCellRenderer();
         columnaEditar.setHorizontalAlignment(SwingConstants.CENTER);
+        columnaEditar.setVerticalAlignment(SwingConstants.CENTER);
         columnaEditar.setBackground(Color.decode("#C27B6B"));
+        
+        DefaultTableCellRenderer columnaElminar = new DefaultTableCellRenderer();
+        columnaElminar.setHorizontalAlignment(SwingConstants.CENTER);
+        columnaElminar.setVerticalAlignment(SwingConstants.CENTER);
+        columnaElminar.setBackground(Color.decode("#EB901A"));
         //columnaEditar.setForeground(Color.decode("#59BA1C"));
         
         for(int i = 0; i< tabla.getColumnCount();i++){
-            tabla.getColumnModel().getColumn(i).setCellRenderer((i!=4) ? general : columnaEditar);
+            tabla.getColumnModel().getColumn(i).setCellRenderer((i==4) ? columnaEditar : (i==5) ? columnaElminar : general);
         }
         
         JScrollPane scroll = new JScrollPane(tabla);
@@ -126,7 +135,42 @@ public class VistaTabla extends JFrame{
                 //System.out.println(archivo.getAbsolutePath());
             }
         });
+        
+        tabla.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                int fila = tabla.rowAtPoint(e.getPoint());
+                int columna = tabla.columnAtPoint(e.getPoint());
+                
+                if(fila > -1){
+                    int idEstudiante = (int) tabla.getValueAt(fila, 0);
+                    if(columna==4){
+                        modificar(idEstudiante);
+                        //System.out.println("Se va editar el estudiante con el ID: " + idEstudiante );
+                    }
+                    if(columna==5){
+                        int respuesta = JOptionPane.showConfirmDialog(null, 
+                                "Esta seguro de que desea eliminarlo??", "ELIMINAR ESTUDIANTE",
+                                JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE);
+                        if(respuesta == JOptionPane.YES_OPTION){
+                            controladorE.eliminarEstudiante(idEstudiante);
+                            JOptionPane.showMessageDialog(null, "Se ELIMINO correctamente el esutdiante", "ELIMINACION EXITOSA", JOptionPane.INFORMATION_MESSAGE);
+                            llenarTabla();
+                        }
+                    }
+                }
+                
+            }
+            
+        });
     }
+    
+    private void modificar(int id){
+        this.setVisible(false);
+        Editar vistaEditar = new Editar(this,id);
+        vistaEditar.setVisible(true);
+    };
     
     private void abrirFormulario(){
         VistaFormulario form = new VistaFormulario(this);
